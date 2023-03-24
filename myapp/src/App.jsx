@@ -16,7 +16,7 @@ function App() {
       <footer className="footer">
         <ul>
           <li>
-            <p>Telefono: 1234-56789</p>
+            <p>Telefono: 1234-5678</p>
           </li>
           <li>
             <p>Dirección: Calle Falsa 123</p>
