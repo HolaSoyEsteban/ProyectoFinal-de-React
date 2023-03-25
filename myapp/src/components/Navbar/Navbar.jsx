@@ -6,8 +6,7 @@ const Navbar = () => {
     <nav className={styles.container_nav}>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Nosotros</a></li>
-          <li><a href="#">Productos</a></li>
+          <li><a href="#">Categorias</a></li>
           <li><a href="#">Contacto</a></li>
           <li><CartWidget /></li>
         </ul>
