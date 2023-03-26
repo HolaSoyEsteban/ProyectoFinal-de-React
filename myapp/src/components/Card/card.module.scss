@@ -1,0 +1,23 @@
+.tarjeta {
+    margin: 10px;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    color: rgb(16, 0, 105);
+    text-shadow: 1px 0px 3px black;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+.botonVerDetalle {
+    background-color: rgb(86, 0, 162);
+    color: white;
+    margin-bottom: 5px;
+    padding: 5px;
+    border-radius: 15px;
+    box-shadow: 2px 3px 8px black;
+    font-size: 1rem;
+}

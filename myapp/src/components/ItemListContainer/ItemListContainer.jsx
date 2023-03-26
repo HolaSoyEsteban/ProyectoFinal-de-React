@@ -1,15 +1,12 @@
+import { Link } from "react-router-dom";
 import styles from "./itemlistcontainer.module.scss";
+import Card from "../Card/Card.jsx"
 
 const ItemListContainer = ({productos}) => {
   return (
     <div className={styles.container}>
       { productos.map(producto => (
-        <div key={producto.id} className={styles.tarjeta}>
-          <h4>{producto.title}</h4>
-          <img src={producto.img} alt={producto.title} width={280} height={450} />
-          <button className={styles.botonVerDetalle}>Ver detalle</button>
-          <p>${producto.price}</p>
-        </div>
+        <Card key={producto.id} producto={producto} />
       ))}
     </div>
   )

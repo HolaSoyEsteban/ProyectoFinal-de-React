@@ -2,20 +2,16 @@
     background-color: rgb(67, 1, 220);
     box-shadow: 4px -2px 2px black;
     width: 100%;
-    color: white;
-
-    & ul{
-        list-style: none;
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        height: 50px;
-        
-        & li{
-            & a{
-                color: aliceblue;
-                text-decoration: none;
-            }
-        }
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    height: 50px;
+    
+    & p {
+        color: aliceblue;
+        text-decoration: none;
+        font-size: 1rem;
     }
 }
