@@ -6,8 +6,8 @@
     justify-content: center;
     align-items: center;
     font-size: 1rem;
-    color: rgb(16, 0, 105);
-    text-shadow: 1px 0px 3px black;
+    color: rgb(0, 0, 0);
+    text-shadow: 0px 0px 2px black;
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
 }
@@ -20,4 +20,8 @@
     border-radius: 15px;
     box-shadow: 2px 3px 8px black;
     font-size: 1rem;
+}
+
+.noDecoration {
+    text-decoration: none;
 }

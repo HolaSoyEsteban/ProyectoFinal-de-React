@@ -5,25 +5,25 @@ import styles from "./navbar.module.scss";
 const Navbar = () => {
   return (
     <nav className={styles.container_nav}>
-        <Link to="/home">
+        <Link to="/home" className={styles.noDecoration}>
           <p>Home</p>
         </Link>
-        <Link to="/category/John_Wick">
+        <Link to="/category/John_Wick" className={styles.noDecoration}>
           <p>John Wick</p>
         </Link>
-        <Link to="/category/Marvel">
+        <Link to="/category/Marvel" className={styles.noDecoration}>
           <p>Marvel</p>
         </Link>
-        <Link to="/category/Stranger_Things">
+        <Link to="/category/Stranger_Things" className={styles.noDecoration}>
           <p>Stranger Things</p>
         </Link>
-        <Link to="/category/The_Walking_Dead">
+        <Link to="/category/The_Walking_Dead" className={styles.noDecoration}>
           <p>The Walking Dead</p>
         </Link>
-        <Link to="/">
+        <Link to="/" className={styles.noDecoration}>
           <p>Contacto</p>
         </Link>
-        <Link to="/">
+        <Link to="/" className={styles.noDecoration}>
           <CartWidget />
         </Link>
        
