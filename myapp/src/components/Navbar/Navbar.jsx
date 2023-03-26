@@ -8,16 +8,16 @@ const Navbar = () => {
         <Link to="/home">
           <p>Home</p>
         </Link>
-        <Link to="/">
+        <Link to="/category/John_Wick">
           <p>John Wick</p>
         </Link>
-        <Link to="/">
+        <Link to="/category/Marvel">
           <p>Marvel</p>
         </Link>
-        <Link to="/">
+        <Link to="/category/Stranger_Things">
           <p>Stranger Things</p>
         </Link>
-        <Link to="/">
+        <Link to="/category/The_Walking_Dead">
           <p>The Walking Dead</p>
         </Link>
         <Link to="/">

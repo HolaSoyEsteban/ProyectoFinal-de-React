@@ -1,5 +1,5 @@
 import Detail from '../Detail/Detail.jsx'
-import styles from './ItemDetailContainer.module.scss'
+import styles from './itemDetailContainer.module.scss'
 
 const ItemDetailContainer = ({productos}) => {
     return (

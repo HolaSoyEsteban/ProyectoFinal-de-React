@@ -37,6 +37,7 @@ function App() {
         <Route path="/" element={<ItemListContainer productos={ productos }/>} />
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/item/:id" element={<ItemDetailContainer productos={ productos } />} />
+        <Route path="/category/:id" element={<ItemListContainer productos={ productos }/>} />
       </Routes>
       
       <footer className="footer">
