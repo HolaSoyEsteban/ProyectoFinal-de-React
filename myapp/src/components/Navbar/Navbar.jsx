@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/category/The_Walking_Dead" className={styles.noDecoration}>
           <p>The Walking Dead</p>
         </Link>
-        <Link to="/" className={styles.noDecoration}>
+        <Link to="/" className={styles.noDecoration}> 
           <p>Contacto</p>
         </Link>
         <Link to="/" className={styles.noDecoration}>
