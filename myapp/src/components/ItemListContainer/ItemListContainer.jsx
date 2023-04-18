@@ -1,6 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import styles from "./itemlistcontainer.module.scss";
-import Card from "../Card/Card.jsx"
+import ItemList from "../ItemList/ItemList.jsx"
 
 const ItemListContainer = ({productos}) => {
   const {id} = useParams();
@@ -9,7 +9,7 @@ const ItemListContainer = ({productos}) => {
     return (
       <div className={styles.container}>
         { productos.map(producto => (
-          <Card key={producto.id} producto={producto} />
+          <ItemList key={producto.id} producto={producto} />
         ))}
       </div>
     )
@@ -17,7 +17,7 @@ const ItemListContainer = ({productos}) => {
     return (
       <div className={styles.container}>
         { productos.filter(producto => producto.category == id).map(producto => (
-          <Card key={producto.id} producto={producto} />
+          <ItemList key={producto.id} producto={producto} />
         ))}
       </div>
     )

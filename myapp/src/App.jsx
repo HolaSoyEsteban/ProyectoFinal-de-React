@@ -3,21 +3,23 @@ import {Link, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
 import Navbar from './components/Navbar/Navbar.jsx'
-import axios from "axios";
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import db from "../db/firebase-config";
+import { getDocs, collection } from 'firebase/firestore';
 
 const URL_API = "https://mocki.io/v1/23637d91-5c03-428a-b653-c05776b41668";
 
 function App() {
   const [productos, setProductos] = useState([]);
+  const referenciaColeccionItemsFirestore = collection(db, "items");
 
   const getProductos = async () => {
-    try {
-      const response = await axios(URL_API);
-      setProductos(response.data);
-    } catch (error) {
-      console.log("Este es el ERROR: " + error);
-    }
+    const coleccionItems = await getDocs(referenciaColeccionItemsFirestore);
+    const items = coleccionItems.docs.map((doc) => ({
+      ...doc.data(),
+      id: doc.id,
+    }));
+    setProductos(items);
   };
 
   useEffect(() => {

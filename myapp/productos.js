@@ -1,4 +1,4 @@
-[
+const productos = [
     {
     "id": 1,
     "title": "John Wick N°1",
@@ -192,3 +192,5 @@
     "price": 800
     }
 ]
+
+export default productos;

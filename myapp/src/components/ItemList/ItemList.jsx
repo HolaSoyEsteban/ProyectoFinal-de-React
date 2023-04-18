@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
-import styles from "./card.module.scss";
+import styles from "./itemList.module.scss";
 
-const Card = ({producto}) => {
+const ItemList = ({producto}) => {
   return (
     <Link to={`/item/${producto.id}`} className={styles.noDecoration}>
         <div className={styles.tarjeta}>
@@ -16,4 +16,4 @@ const Card = ({producto}) => {
   )
 }
 
-export default Card
+export default ItemList
