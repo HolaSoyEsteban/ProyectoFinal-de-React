@@ -1,9 +1,13 @@
 import { useEffect, useState } from 'react'
 import {Link, Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
+import Brand from './components/Brand/Brand'
 import Navbar from './components/Navbar/Navbar.jsx'
+import Footer from './components/Footer/Footer'
+import ItemListContainer from './components/ItemListContainer/ItemListContainer.jsx'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import Cart from './components/Cart/Cart.jsx'
+import Loader from './components/Loader/loader.jsx'
 import db from "../db/firebase-config";
 import { getDocs, collection } from 'firebase/firestore';
 
@@ -11,6 +15,7 @@ const URL_API = "https://mocki.io/v1/23637d91-5c03-428a-b653-c05776b41668";
 
 function App() {
   const [productos, setProductos] = useState([]);
+  const [loading, setLoading] = useState(true);
   const referenciaColeccionItemsFirestore = collection(db, "items");
 
   const getProductos = async () => {
@@ -20,18 +25,25 @@ function App() {
       id: doc.id,
     }));
     setProductos(items);
+    setLoading(false);
   };
 
   useEffect(() => {
     getProductos();
   }, []);
 
+  if (loading){
+    return (
+      <div>
+        <Loader />
+      </div>
+    )
+  }
+
   return (
     <div>
       <Link to="/">
-        <div className="brand">
-          <img src="./public/img/Logo.png" alt="Logo del sitio" className="logo"/>
-        </div>
+        <Brand />
       </Link>
       <Navbar />
       <h1 className="tituloPrincipal">¡Explora un universo de historias en nuestra tienda de cómics online!</h1>
@@ -40,22 +52,10 @@ function App() {
         <Route path="/home" element={<Navigate to="/" />} />
         <Route path="/item/:id" element={<ItemDetailContainer productos={ productos } />} />
         <Route path="/category/:id" element={<ItemListContainer productos={ productos }/>} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
       
-      <footer className="footer">
-        <ul>
-          <li>
-            <p>Telefono: 1234-5678</p>
-          </li>
-          <li>
-            <p>Dirección: Calle Falsa 123</p>
-          </li>
-          <li>
-            <p></p>
-          </li>
-        </ul>
-        <span>Todos los derechos reservados</span>
-      </footer>
+      <Footer />
     </div>
   )
 }

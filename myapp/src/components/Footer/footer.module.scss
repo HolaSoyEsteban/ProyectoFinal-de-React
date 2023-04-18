@@ -1,0 +1,18 @@
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.909);
+    width: 100%;
+    color: black;
+    height: 150px;
+}
+
+.ul{
+    list-style: none;
+}
+
+.span{
+    margin-top: 20px;
+}

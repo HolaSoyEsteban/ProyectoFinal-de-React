@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styles from "./itemDetail.module.scss";
+import Description from "./Description.jsx"
 
 const ItemDetail = ({producto}) => {
     const {id} = useParams();
@@ -12,13 +13,11 @@ const ItemDetail = ({producto}) => {
                 <Link to={`/category/${producto.category}`} className={styles.linkDecoration}>
                     <p className={styles.category}>Categoria: {producto.category}</p>
                 </Link>
-                <p>Sinopsis</p>
-                <p>{producto.description}</p>
+                <Description description= { producto.description }/>
                 <button>Agregar al carrito</button>
                 <p>${producto.price}</p>
             </div>
         )
-
 }
 
 export default ItemDetail

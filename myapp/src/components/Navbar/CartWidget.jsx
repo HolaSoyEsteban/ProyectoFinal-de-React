@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import styles from "./cartwidget.module.scss";
 
 const CartWidget = () => {
   return (
-    <div className={styles.container}>
-      <img src="../../../public/img/carritoIcono.svg" alt="Logo de carrito compras" className={styles.carritoIcono} />
-      <p>7</p>
-    </div>
+    <Link to={`/cart`}>
+      <div className={styles.container}>
+        <img src="../../../public/img/carritoIcono.svg" alt="Logo de carrito compras" className={styles.carritoIcono} />
+        <p>7</p>
+      </div>
+    </Link>
   )
 }
 
