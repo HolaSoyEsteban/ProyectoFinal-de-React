@@ -17,7 +17,7 @@ const ItemDetail = ({producto}) => {
                     <p className={styles.category}>Categoria: {producto.category}</p>
                 </Link>
                 <Description description= { producto.description }/>
-                <ItemQuantitySelector key={id}/>
+                <ItemQuantitySelector />
                 <AddItemButtom producto={ producto }/>
                 <p>${producto.price}</p>
             </div>
