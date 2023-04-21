@@ -10,8 +10,7 @@ import Cart from './components/Cart/Cart.jsx'
 import Loader from './components/Loader/loader.jsx'
 import db from "../db/firebase-config";
 import { getDocs, collection } from 'firebase/firestore';
-
-const URL_API = "https://mocki.io/v1/23637d91-5c03-428a-b653-c05776b41668";
+import { CartProvider } from './Contexts/CartContext.jsx';
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -45,15 +44,17 @@ function App() {
       <Link to="/">
         <Brand />
       </Link>
-      <Navbar />
-      <h1 className="tituloPrincipal">¡Explora un universo de historias en nuestra tienda de cómics online!</h1>
-      <Routes>
-        <Route path="/" element={<ItemListContainer productos={ productos }/>} />
-        <Route path="/home" element={<Navigate to="/" />} />
-        <Route path="/item/:id" element={<ItemDetailContainer productos={ productos } />} />
-        <Route path="/category/:id" element={<ItemListContainer productos={ productos }/>} />
-        <Route path="/cart" element={<Cart />} />
-      </Routes>
+      <CartProvider>
+        <Navbar />
+        <h1 className="tituloPrincipal">¡Explora un universo de historias en nuestra tienda de cómics online!</h1>
+        <Routes>
+          <Route path="/" element={<ItemListContainer productos={ productos }/>} />
+          <Route path="/home" element={<Navigate to="/" />} />
+          <Route path="/item/:id" element={<ItemDetailContainer productos={ productos } />} />
+          <Route path="/category/:id" element={<ItemListContainer productos={ productos }/>} />
+          <Route path="/cart" element={<Cart />} />
+        </Routes>
+      </CartProvider>
       
       <Footer />
     </div>
