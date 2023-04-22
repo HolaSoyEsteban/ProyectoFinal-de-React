@@ -2,7 +2,6 @@ import React from 'react'
 import { Link, useParams } from 'react-router-dom'
 import styles from "./itemDetail.module.scss";
 import Description from "./Description.jsx"
-import ItemQuantitySelector from './ItemQuantitySelector.jsx';
 import AddItemButtom from './AddItemButtom.jsx';
 
 
@@ -17,7 +16,6 @@ const ItemDetail = ({producto}) => {
                     <p className={styles.category}>Categoria: {producto.category}</p>
                 </Link>
                 <Description description= { producto.description }/>
-                <ItemQuantitySelector />
                 <AddItemButtom producto={ producto }/>
                 <p>${producto.price}</p>
             </div>

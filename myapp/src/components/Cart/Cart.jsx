@@ -2,9 +2,10 @@ import React from 'react';
 import { useCart } from "../../Contexts/CartContext";
 import styles from "./cart.module.scss";
 import Checkout from "./Checkout.jsx";
+import ItemQuantitySelector from "./ItemQuantitySelector";
 
 const Cart = () => {
-  const { cartItems, removeProduct } = useCart();
+  const { cartItems, removeProduct, increaseProductQuantity, decreaseProductQuantity } = useCart();
 
   return (
     <div className={styles.container}>
@@ -17,9 +18,13 @@ const Cart = () => {
               <img src={product.img} width={80} alt={product.title}/>
             </div>
             <p>Precio c/u:  $ {product.price}</p>
-            <p>Cantidad: {product.quantity}</p>
             <p>Precio del pack:  $ {product.price * product.quantity}</p>
-            <button onClick={() => removeProduct(product)}>Eliminar</button>
+            <ItemQuantitySelector
+              quantity={product.quantity}
+              onIncrease={() => increaseProductQuantity(product)}
+              onDecrease={() => decreaseProductQuantity(product)}
+            />
+            <button className={styles.eliminar} onClick={() => removeProduct(product)}>Eliminar</button>
           </li>
         ))}
       </ul>

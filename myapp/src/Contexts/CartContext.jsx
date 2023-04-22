@@ -43,8 +43,34 @@ export function CartProvider({ children }) {
     localStorage.removeItem(CART_STORAGE_KEY);
   }
 
+  function increaseProductQuantity(product) {
+    const index = cartItems.findIndex(item => item.id === product.id);
+    if (index === -1) {
+      // El producto no se encuentra en el carrito
+      return;
+    }
+    const updatedItems = [...cartItems];
+    updatedItems[index] = { ...updatedItems[index], quantity: updatedItems[index].quantity + 1 };
+    setCartItems(updatedItems);
+  }
+  
+  function decreaseProductQuantity(product) {
+    const index = cartItems.findIndex(item => item.id === product.id);
+    if (index === -1) {
+      // El producto no se encuentra en el carrito
+      return;
+    }
+    const updatedItems = [...cartItems];
+    if (updatedItems[index].quantity > 1) {
+      updatedItems[index] = { ...updatedItems[index], quantity: updatedItems[index].quantity - 1 };
+    } else {
+      updatedItems.splice(index, 1); // Remueve el producto del arreglo si su cantidad es 1 o menos
+    }
+    setCartItems(updatedItems);
+  }
+
   return (
-    <CartContext.Provider value={{ cartItems, addToCart, removeProduct, clearCart }}>
+    <CartContext.Provider value={{ cartItems, addToCart, removeProduct, clearCart, decreaseProductQuantity, increaseProductQuantity }}>
       {children}
     </CartContext.Provider>
   );

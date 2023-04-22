@@ -1,0 +1,31 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    & p {
+        width: 50px;
+        padding: 0px;
+        font-size: 1.2em;
+        text-align: center;
+    }
+    & button {
+        width: 40px;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.37);
+    }
+    .disminuir {
+        background-color: rgba(210, 60, 1, 0.354);
+        &:hover {
+            background-color: rgba(236, 67, 0, 0.445);
+        }
+    }
+    .aumentar {
+        background-color: rgba(0, 128, 0, 0.539);
+        &:hover {
+            background-color: rgba(0, 179, 0, 0.539);
+        }
+    }
+}
