@@ -11,6 +11,7 @@ import Loader from './components/Loader/loader.jsx'
 import db from "../db/firebase-config";
 import { getDocs, collection } from 'firebase/firestore';
 import { CartProvider } from './Contexts/CartContext.jsx';
+import PageNotFound from './components/PageNotFound/PageNotFound'
 
 function App() {
   const [productos, setProductos] = useState([]);
@@ -53,6 +54,7 @@ function App() {
           <Route path="/item/:id" element={<ItemDetailContainer productos={ productos } />} />
           <Route path="/category/:id" element={<ItemListContainer productos={ productos }/>} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="*" element={<PageNotFound />} />
         </Routes>
       </CartProvider>
       
