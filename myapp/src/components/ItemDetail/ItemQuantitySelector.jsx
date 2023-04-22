@@ -14,7 +14,6 @@ const ItemQuantitySelector = () => {
     setCantidad(cantidad + 1);
   }
 
-  
   return (
     <div className={styles.container}>
       <button onClick={decrementarCantidad}> - </button>

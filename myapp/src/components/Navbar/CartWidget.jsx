@@ -16,7 +16,7 @@ const CartWidget = () => {
           alt="Logo de carrito compras"
           className={styles.carritoIcono}
         />
-        <p>{totalQuantity}</p>
+        <p className={styles.circuloCantidad}>{totalQuantity}</p>
       </div>
     </Link>
   );

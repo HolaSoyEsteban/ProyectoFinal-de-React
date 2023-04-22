@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCart } from "../../Contexts/CartContext";
 import styles from "./cart.module.scss";
+import Checkout from "./Checkout.jsx";
 
 const Cart = () => {
   const { cartItems, removeProduct } = useCart();
@@ -22,6 +23,7 @@ const Cart = () => {
           </li>
         ))}
       </ul>
+      <Checkout />
     </div>
   )
 }
